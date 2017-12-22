@@ -11,5 +11,5 @@ object Main extends App {
     QueryOption.of(QueryResultsOption.maxWaitTime(60000L)),
     QueryOption.of(QueryResultsOption.pageSize(1000L)))
   val rs = queryResponse.getResult()
-  println(rs)
+  println(if (rs.getValues.iterator().next().get("status").getBooleanValue) "True" else "False")
 }
